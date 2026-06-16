@@ -15,7 +15,6 @@ fun beginntArbeit(sachbearbeiter: Sachbearbeiter): Long {
 
 fun bewerbungAbgeschlossen(sachbearbeiter: Sachbearbeiter, arbeitsanfang: Long) {
     println("${sachbearbeiter.name} hat ${System.currentTimeMillis() - arbeitsanfang} Tage benoetigt um den Mitarbeiter einzustellen.")
-
 }
 
 fun schreibtStelleAus(sachbearbeiter: Sachbearbeiter) {
@@ -86,6 +85,17 @@ suspend fun fuehrtBewerbungsgespraecheSus(sachbearbeiter: Sachbearbeiter) {
 suspend fun leitetPruefungEinSus(sachbearbeiter: Sachbearbeiter) {
     println("${sachbearbeiter.name} leitet Pruefung ein.")
     delay(180.milliseconds)
+}
+
+suspend fun leitetPruefungEinSusMitFehler(sachbearbeiter: Sachbearbeiter) {
+    println("${sachbearbeiter.name} leitet Pruefung ein.")
+    delay(50.milliseconds)
+    throw IllegalStateException("Kandidat hat die Hintergrundpruefung nicht bestanden!")
+}
+
+suspend fun waehltBesteKandidatenAusSus(sachbearbeiter: Sachbearbeiter) {
+    println("${sachbearbeiter.name} waehlt Beste Kandidaten aus.")
+    delay(1.milliseconds)
 }
 
 suspend fun erstelltArbeitsvertragSus(sachbearbeiter: Sachbearbeiter) {
