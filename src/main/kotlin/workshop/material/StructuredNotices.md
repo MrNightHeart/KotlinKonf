@@ -36,16 +36,7 @@ Instead of blocking a thread, we suspend the coroutine
 
 ______________________________________________________________________________________________________
 
-
-Hier ist eine ausführlichere und thematisch gegliederte Zusammenfassung:
-
----
-
 # KotlinConf 2026: Asynchronous Programming with Kotlin Coroutines
-**Workshop-Skript | 365 Folien**
-**Autoren:** Sebastian Aigner, Natasha Murashkina, Alejandro Serrano Mena (JetBrains)
-
-Der Workshop ist als ganztägiges, hands-on Format konzipiert. Drei kleine Beispielprojekte dienen als roter Faden: *Articles* (Blog-API), *Kettle* (Wasserkocher mit WebSocket) und *Chat* (Echtzeit-Messaging). Das Skript kombiniert Theorie-Folien, Live-Demos und ca. 10 nummerierte Coding-Tasks.
 
 ---
 
@@ -53,7 +44,7 @@ Der Workshop ist als ganztägiges, hands-on Format konzipiert. Drei kleine Beisp
 
 ### 1.1 Das Grundproblem: Blocking vs. Suspending
 
-Der Workshop beginnt mit der Frage, warum herkömmliche blocking API-Aufrufe problematisch sind. Ein blockierender HTTP-Request blockiert den gesamten Thread – vor allem fatal im UI-Thread, der ständig rendern muss. Coroutines lösen das, indem sie statt des Threads die *Coroutine* pausieren. Der Thread bleibt frei und kann andere Aufgaben übernehmen.
+Warum sind herkömmliche blocking API-Aufrufe problematisch? Ein blockierender HTTP-Request blockiert den gesamten Thread – vor allem fatal im UI-Thread, der ständig rendern muss. Coroutines lösen das, indem sie statt des Threads die *Coroutine* pausieren. Der Thread bleibt frei und kann andere Aufgaben übernehmen.
 
 ```kotlin
 // Blocking:

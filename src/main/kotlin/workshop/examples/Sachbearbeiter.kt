@@ -56,6 +56,10 @@ fun erstelltArbeitsvertrag(sachbearbeiter: Sachbearbeiter) {
     println("${sachbearbeiter.name} erstellt Arbeitsvertrag.")
     Thread.sleep(10)
 }
+/**
+ * ______________________________________________________________________________________________________________
+ *                                           Suspending-Functions
+**/
 
 suspend fun schreibtStelleAusSus(sachbearbeiter: Sachbearbeiter) {
     println("${sachbearbeiter.name} schreibt die Stelle aus.")
@@ -90,7 +94,7 @@ suspend fun leitetPruefungEinSus(sachbearbeiter: Sachbearbeiter) {
 suspend fun leitetPruefungEinSusMitFehler(sachbearbeiter: Sachbearbeiter) {
     println("${sachbearbeiter.name} leitet Pruefung ein.")
     delay(50.milliseconds)
-    throw IllegalStateException("Kandidat hat die Hintergrundpruefung nicht bestanden!")
+    throw IllegalStateException("Kandidat hat die Pruefung nicht bestanden!")
 }
 
 suspend fun waehltBesteKandidatenAusSus(sachbearbeiter: Sachbearbeiter) {

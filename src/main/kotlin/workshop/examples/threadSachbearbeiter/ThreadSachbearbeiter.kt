@@ -58,6 +58,7 @@ fun ThreadSachbearbeiter.arbeitet() {
     vereinbartBewerbungsgespraeche.join()
     fuehrtBewerbungsgespraeche.join()
 
+    // wird erst ausgeführt, wenn alle Nebenthreads fertig sind
     waehltBesteKandidatenAus(this)
 
     leitetPruefungEin.start()

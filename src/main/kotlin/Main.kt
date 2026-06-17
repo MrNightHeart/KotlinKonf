@@ -19,32 +19,36 @@ import org.example.workshop.examples.threadSachbearbeiter.arbeitet
 
 suspend fun main() {
     // Sequentiell arbeiten
-    KlassischerSachbearbeiter(name = "Helmut", alter = 30).arbeitet()
+//    KlassischerSachbearbeiter(name = "Helmut", alter = 30).arbeitet()
+//
+//    // Mit Threads arbeiten
+//    ThreadSachbearbeiter(name = "Peter", alter = 60).arbeitet()
+//
+//    // Mit Coroutines arbeiten
+//    CoroutineSachbearbeiter(name = "Maria", alter = 45).arbeitet()
 
-    // Mit Threads arbeiten
-    ThreadSachbearbeiter(name = "Peter", alter = 60).arbeitet()
 
-    // Mit Coroutines arbeiten
-    CoroutineSachbearbeiter(name = "Maria", alter = 45).arbeitet()
+    // ________________________________________________________________________________________
+
 
     // Error Handling – Beispiel 1: try-catch (bevorzugter Weg)
-    ErrorSachbearbeiter(name = "Anna", alter = 35).tryCatchBeispiel()
+//    ErrorSachbearbeiter(name = "Anna", alter = 35).tryCatchBeispiel()
 
     // Error Handling – Beispiel 2: Fehlerausbreitung mit coroutineScope
-    ErrorSachbearbeiter(name = "Klaus", alter = 42).fehlerAusbreitungBeispiel()
+//    ErrorSachbearbeiter(name = "Klaus", alter = 42).fehlerAusbreitungBeispiel()
 
     // Error Handling – Beispiel 3: supervisorScope als Fehlergrenze
-    ErrorSachbearbeiter(name = "Brigitte", alter = 50).supervisorScopeBeispiel()
+//    ErrorSachbearbeiter(name = "Brigitte", alter = 50).supervisorScopeBeispiel()
 
     // Error Handling – Beispiel 4: CoroutineExceptionHandler
-    ErrorSachbearbeiter(name = "Dieter", alter = 55).exceptionHandlerBeispiel()
+//    ErrorSachbearbeiter(name = "Dieter", alter = 55).exceptionHandlerBeispiel()
 
     // Flows – Beispiel 1: collect (Cold Flow)
-    FlowSachbearbeiter(name = "Sophie", alter = 28).collectBeispiel()
+//    FlowSachbearbeiter(name = "Sophie", alter = 28).collectBeispiel()
 
     // Flows – Beispiel 2: Intermediate Operators (map, filter, onEach)
-    FlowSachbearbeiter(name = "Thomas", alter = 33).operatorsBeispiel()
+//    FlowSachbearbeiter(name = "Thomas", alter = 33).operatorsBeispiel()
 
     // Flows – Beispiel 3: StateFlow (Hot Flow)
-    FlowSachbearbeiter(name = "Laura", alter = 40).stateFlowBeispiel()
+//    FlowSachbearbeiter(name = "Laura", alter = 40).stateFlowBeispiel()
 }

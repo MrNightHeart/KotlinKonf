@@ -30,6 +30,7 @@ data class ErrorSachbearbeiter(
  */
 suspend fun ErrorSachbearbeiter.tryCatchBeispiel() {
     val arbeitsanfang = beginntArbeit(this)
+
     schreibtStelleAusSus(this)
     wartetAufBewerbungsEndeSus(this)
     wertetBewerbungenAusSus(this)
@@ -53,7 +54,7 @@ suspend fun ErrorSachbearbeiter.tryCatchBeispiel() {
 // ─────────────────────────────────────────────────────────────────────────────
 
 /**
- * Fehlerausbreitung in der Coroutine-Hierarchie:
+ * Fehlerausbreitung in der Coroutine-Hierarchie: (Skript 116)
  * Ein Kind wirft eine unbehandelte Exception
  *   → Eltern-Job wird gecancelt
  *   → alle Geschwister-Coroutines werden abgebrochen
@@ -63,9 +64,13 @@ suspend fun ErrorSachbearbeiter.tryCatchBeispiel() {
  *       launch { leitetPruefungEinSusMitFehler(...) }  ← wirft Exception
  *       launch { erstelltArbeitsvertragSus(...) }       ← wird abgebrochen!
  *   }                                                   ← Exception landet hier
+ *
+ *   Es können Scopes auch verdrahtet werden (Skript 143) coroutineScope != CoroutineScop
+ * Cancelation Skript 163, kann nur stattfinden, wenn grade suspended wird, das kann man aber unterstützen Skript 184
  */
 suspend fun ErrorSachbearbeiter.fehlerAusbreitungBeispiel() {
     val arbeitsanfang = beginntArbeit(this)
+
     schreibtStelleAusSus(this)
     wartetAufBewerbungsEndeSus(this)
     wertetBewerbungenAusSus(this)
@@ -153,6 +158,7 @@ suspend fun ErrorSachbearbeiter.supervisorScopeBeispiel() {
  */
 suspend fun ErrorSachbearbeiter.exceptionHandlerBeispiel() {
     val arbeitsanfang = beginntArbeit(this)
+
     schreibtStelleAusSus(this)
     wartetAufBewerbungsEndeSus(this)
     wertetBewerbungenAusSus(this)
